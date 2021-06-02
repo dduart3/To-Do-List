@@ -27,10 +27,17 @@ const storageController = ( () =>{
 
     
     
-    PubSub.subscribe(SECTIONS_UPDATED, setItem);
-    PubSub.publish(STORED_SECTIONS, getItem('SECTIONS'));
+    const test = (msg, sections) => {
+        console.log(sections);
+    }
 
-    
+    //This is the subscriber, is called if this file is imported before the logic
+    PubSub.subscribe(SECTIONS_UPDATED, test);
+
+
+    PubSub.publish(STORED_SECTIONS, 'testfromstorage');
+
+
 
 })();
 

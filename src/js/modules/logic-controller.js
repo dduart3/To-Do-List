@@ -56,25 +56,21 @@ const sections = (() => {
     }
 
 
-    const initializeSectionsList = () => {
-        
-    }
 
 
-    const displaySections = (msg, sections) => {
+    
+    
+    
+    
+    
+    
+    const test = (msg, sections) => {
         console.log(sections);
     }
     
     
+    //This is the subscriber, is called if this file is imported before the storage
+    PubSub.subscribe(STORED_SECTIONS, test);    
     
-    PubSub.subscribe(STORED_SECTIONS, displaySections);
-   
-    
-    
-
-   
-    
-    //console.log(getSection('Home').items)
-    
-    
+    PubSub.publish(SECTIONS_UPDATED, 'testfromlogic')
 })();
