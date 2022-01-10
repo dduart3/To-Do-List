@@ -15,12 +15,108 @@
         </header>
     
         <main class="main">
-            <div class="main__left-side">
+            <div class="left-side">
+
+                <div class="projects">
+                    <h4 style="text-align: center; margin-bottom: 3vh; color: red; font-size: 1.5rem;">Projects</h4>
+
+                </div>
+
+                <div class="add-project">
+                    <button class="add-project__button" id="add-project">+ Add project</button>
+                </div>
+                
             </div>
-            <div class="main__right-side"></div>
+            <div class="right-side">
+                <div class="project">
+                    <div class="project__title"></div>
+                    <div class="project__tasks-header">
+                        <div>Title</div>
+                        <div>Description</div>
+                        <div>Due Date</div>
+                        <div>Priority</div>
+                    </div>
+                    <div class="project__content"></div>
+                        <div class="add-task">
+                            <button class="add-task__button" id="add-task">+ Add task</button>
+                        </div>
+                    </div>
+                    
+                </div>
+               
+
+            </div>
+
         </main>
     </div>
+
+    <div class="modal hidden" id="add-task-modal">
+        <div class="modal__container">
+            <div class="modal__header">New Task</div>
+
+            <div class="modal__fields">
+
+            <div class="field">
+                <div class="field__title">Title</div>
+                <input class="title" type="text" id="task-title">
+            </div>
+
+            <div class="field">
+                <div class="field__title">Description</div>
+                <textarea name="" id="task-description" cols="20" rows="2" ></textarea>
+            </div>
+
+            <div class="field">
+                <div class="field__title">Date</div>
+                <input class="date" type="date" id="task-date">
+            </div>
+
+            <div class="field">
+                <div class="field__title">Priority</div>
+                
+
+                <input type="radio" name="priority" id="priority-low" value="Low">
+                <label for="priority-low">Low</label>
+
+                <input type="radio" name="priority" id="priority-medium" value="Medium">
+                <label for="priority-medium">Medium</label>
+
+                <input type="radio" name="priority" id="priority-high" value="High">
+                <label for="priority-high">High</label>
+
+                </div>
+
+            <button class="add-task__button" id="add-task-modal-button">Add task</button>
+
+            </div>
+
+            
+        </div>
+    </div>
+
+    <div class="modal hidden" id="add-project-modal">
+        <div class="modal__container">
+            <div class="modal__header">New Project</div>
+
+            <div class="modal__fields">
+            <div class="field">
+                <div class="field__title">Title</div>
+                <input class="title" type="text" id="project-title">
+            </div>
+                </div>
+            <button class="add-task__button" id="add-project-modal-button">+ Add project</button>
+            </div>
+        </div>
+
+        <div class="modal hidden" id="description-modal">
+            <div class="modal__container">
+                <div class="modal__header">Description</div>
+                <div class="modal__content"></div>
+            </div>
+        </div>
+
     
     <script src="/src/js/script.js"></script>
 </body>
 </html>
+

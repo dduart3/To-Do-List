@@ -3,9 +3,9 @@ import PubSub from 'pubsub-js';
 
 const storageController = ( () =>{
 
-    const SECTIONS_UPDATED = 'SECTIONS_UPDATED';
-    const STORED_SECTIONS = 'STORED_SECTIONS';
+    const PROJECTS_UPDATED = 'PROJECTS_UPDATED';
 
+    const STORED_PROJECTS = 'STORED_PROJECTS';
     
     const storage = window.localStorage;
     
@@ -26,17 +26,9 @@ const storageController = ( () =>{
     }
 
     
+    PubSub.publish(STORED_PROJECTS, getItem('PROJECTS'));
     
-    const test = (msg, sections) => {
-        console.log(sections);
-    }
-
-    //This is the subscriber, is called if this file is imported before the logic
-    PubSub.subscribe(SECTIONS_UPDATED, test);
-
-
-    PubSub.publish(STORED_SECTIONS, 'testfromstorage');
-
+    PubSub.subscribe(PROJECTS_UPDATED, setItem);
 
 
 })();
